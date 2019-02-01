@@ -1,6 +1,6 @@
 function replaceText (node) {
     if (node.nodeName === "noscript" || node.nodeName === "script" || node.nodeName === "style")
-        console.log("o no");
+    {
         return;
     }
     if (node.nodeType === Node.TEXT_NODE) {
@@ -18,3 +18,4 @@ function replaceText (node) {
     }
   }  
   replaceText(document.body);
+  
