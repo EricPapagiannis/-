@@ -1,5 +1,5 @@
 {
-"manifest_version": 2,
+    "manifest_version": 2,
     "name": "🅱️",
     "description": "🅱️",
     "version": "98.0",
@@ -13,5 +13,11 @@
             ],
             "run_at": "document_end"
         }
-    ]
+    ],
+    "browser_action": {
+        "default_icon": { "16": "b-icons/b-16.png",
+            "48": "b-icons/b-48.png",
+           "128": "b-icons/b-128.png"
+        }
+    }
 }
