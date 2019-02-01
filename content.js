@@ -1,18 +1,20 @@
-var elements = document.getElementsByTagName('*');
-
-for (var i = 0; i < elements.length; i++) {
-    var element = elements[i];
-
-    for (var j = 0; j < element.childNodes.length; j++) {
-        var node = element.childNodes[j];
-
-        if (node.nodeType === 3) {
-            var text = node.nodeValue;
-            var replacedText = text.replace(/b/gi, '🅱️');
-
-            if (replacedText !== text) {
-                element.replaceChild(document.createTextNode(replacedText), node);
-            }
-        }
+function replaceText (node) {
+    if (node.nodeName === "noscript" || node.nodeName === "script" || node.nodeName === "style")
+        console.log("o no");
+        return;
     }
-}
+    if (node.nodeType === Node.TEXT_NODE) {
+        if (node.parentNode &&
+            node.parentNode.nodeName === 'TEXTAREA') {
+        return;
+        }
+        
+        node.textContent = node.textContent.replace(/b/gi, '🅱️');;
+    }
+    else {
+      for (let i = 0; i < node.childNodes.length; i++) {
+        replaceText(node.childNodes[i]);
+      }    
+    }
+  }  
+  replaceText(document.body);
