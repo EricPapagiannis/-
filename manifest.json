@@ -1,0 +1,17 @@
+{
+"manifest_version": 2,
+    "name": "🅱️",
+    "description": "🅱️",
+    "version": "98.0",
+    "content_scripts": [
+        {
+            "matches": [
+                "*://*/*"
+            ],
+            "js": [
+                "content.js"
+            ],
+            "run_at": "document_end"
+        }
+    ]
+}
